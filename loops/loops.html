@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Alexandre">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+    <style>
+        body{
+            background: rgb(139, 139, 139);
+            padding: 1em;
+            color: black;
+        }
+    </style>
+</head>
+    <body>
+
+
+        <script>
+            let numero = prompt('Digite um número: ')
+            let indice = 1
+            while(indice <= 10){
+                document.write(`${indice} x ${numero} = ${( indice * numero )} <br>`)
+                indice++
+            }
+            document.write('saiu do loop while')
+
+            for(let j = 0; j <= 10; j++){
+                document.write(`${j} x ${numero} = ${( j * numero )} <br>`)
+            }
+            document.write('saiu do loop for')
+
+            do{
+                document.write(`${numero} x ${indice} = ${( indice * numero )} <br>`)
+                indice++
+            }while(indice <= 10)
+
+            document.write('saiu do loop. do while <br>')
+
+            do{
+                if(indice > 10){
+                    alert('indice maior que 10')
+                    break
+                }
+                document.write(`${numero} x ${indice} = ${( indice * numero )} <br>`)
+                indice++
+            }while(indice <= 10)
+        </script>
+    </body>
+</html>
