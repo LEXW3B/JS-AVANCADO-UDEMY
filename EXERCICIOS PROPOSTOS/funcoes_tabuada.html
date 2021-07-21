@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Alexandre">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background: rgb(128, 127, 127);
+            padding: 1em;
+            color: black;
+        }
+    </style>
+    <title>Tabuada</title>
+</head>
+    <body>
+        <h1>Funções - Tabuada</h1>
+        <button onclick="mostrarTabuada()">Monstrar Tabuada</button>
+        <button onclick="limpaTela()">Limpar Tabuada</button>
+        <div id="output"></div>
+        
+        <script>
+            //pedir para o usuario digitar um numero
+            //mostrar a tabuad desse numero de 1 a 1000
+            //toda informação que vem da interface do usuario e string
+            //coloque botão limpa tela
+            const output = document.getElementById('output');
+
+            function mostrarTabuada(){
+
+                msg = ''
+                let _n = parseFloat(prompt('Digite um Número: '))
+                
+                for(let indice = 1; indice <= 1000; indice++){
+                    msg += `${indice} x ${_n} = ${(indice * _n)} <br>`
+                }
+
+                output.innerHTML = msg
+            }
+            function limpaTela(){
+                output.innerText = ''
+            }            
+        </script>
+    </body>
+</html>
