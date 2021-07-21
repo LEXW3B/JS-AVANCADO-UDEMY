@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Alexandre">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(136, 136, 136);
+            padding: 1em;
+            color: black;
+        }
+    </style>
+</head>
+    <body>
+        <h1>funções javascript</h1>
+
+        <script>
+            //declaração de função (aparece na pagina do site)
+            function ola(){
+                document.write("Olá mundo");
+            }
+            ola();
+
+            //expressão de função (aparece na pagina de depuração - F12)
+            const ola2 = function(){
+                console.log("Olá mundo de function expression");
+            }
+            ola2();
+
+            //arrowfunction
+            const ola3 = () => {
+                console.log('ola mundo arrow function expression');
+            }
+            ola3();
+
+            //retorno de valores
+
+            function obtemDiaSemana(){
+                return new Date().getDay()
+            }
+            //let dia = obtemDiaSemana()
+            console.log(obtemDiaSemana())
+
+            //receber valores
+
+            function somar(n1, n2){
+                return n1 + n2;
+            }
+            let soma = somar(3, 5)
+            console.log(soma)
+
+            console.log(somar(10, 4))
+            alert(somar(2, 3))
+
+            //ou
+
+            function Somar(_n1 = 0, _n2 = 0){
+                //let _n1 = _n1 || 0
+                //let _n2 = _n2 || 0
+                return _n1 + _n2;
+            }
+            let Soma = Somar(3, 5, 8)
+            console.log(Soma)
+
+            console.log(Somar(10))
+            alert(Somar())
+
+
+
+        </script>        
+    </body>
+</html>
