@@ -5,7 +5,8 @@
 } 
 init()*/
 
-(function(){
+(function(win, doc){
+    'use strict'
     let isValid = false
     console.log('menu', isValid)
 
@@ -13,4 +14,5 @@ init()*/
         console.log('init menu')
     }
     init()
-})()
+})(window, document)
+
