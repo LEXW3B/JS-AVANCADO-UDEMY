@@ -19,6 +19,6 @@ Deve retornar zero caso não receba nenhum parâmetro
         return total / qtd || 0
     }
 
-    let media = calcularMedia()
+    let media = calcularMedia(8, 10)
     console.log(media)
 })()
