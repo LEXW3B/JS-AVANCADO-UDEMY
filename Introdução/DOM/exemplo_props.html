@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alexandre">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        body{
+            background: #777;
+            padding: 1em;
+        }
+    </style>
+</head>
+    <body>
+        <h1 class="title1">Curso javascript completo</h1>
+
+        <main class="cmain" id="idmain">
+            <h2>Subtitulo</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </main>
+
+        <form action="#">
+            <input type="text" id="txtNome" placeholder="nome"><br>
+            <input type="text" id="txtEmail" placeholder="email"><br><br>
+
+            <input type="checkbox" id="contrato">
+            <label for="contrato">Li e aceito o contrato</label><br><br>
+            <textarea name="" id="" cols="30" rows="10" readonly>
+                Este contrato...
+            </textarea>
+        </form>
+
+        <script>
+            const txtNome = document.querySelector('#txtNome')
+            const txtEmail = document.querySelector('#txtEmail')
+            const labelContrato = document.querySelector("label[for='contrato']")
+
+            txtNome.value = 'Alexandre'
+            txtNome.disabled = true
+            console.log(txtNome.value)
+            console.log(labelContrato)
+
+            txtEmail.readOnly = true
+        </script>
+    </body>
+</html>
