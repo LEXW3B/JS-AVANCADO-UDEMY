@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title> pagina de exemplo de DOM </title>
+    <meta charset="utf-8">
+    <meta name="author" content="Alexandre">
+    <meta name="keywords" content="html5, tecnologia">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+    <body>
+        <div id="principal">
+            <header class="hero">
+                <div class="hero-content">
+                    <h1>Curso Javascript Completo</h1>
+                    <h2>Cadastre-se em nossa newsletter</h2>                    
+                    <div id="newsletterFeedback">
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="content-section">
+                    <div id="newsletterForm">
+                        <label for="txtEmail">Email:</label>
+                        <input type="email" onblur="disableEmail()" id="txtEmail" autocomplete="off" disabled value= 'Alexandre@server.com'> 
+                        <button id="btn" onclick="editarEmail()">Editar</button>
+                    </div>
+                </section>               
+            </main>
+
+            <footer class="rodape">
+
+                <p>Copyright &copy; 2018</p>
+
+            </footer>
+        </div>
+        <script src="js/newslatter.js"></script>
+    </body>
+
+</html>
