@@ -10,15 +10,15 @@ let soNumeros = arr.every(function(el){  //se todos os retornos for verdade enta
 })
 console.log(soNumeros)
 
-let arr1 = arr.filter(function(el, i, _arr){ //filtra um ou varios tipos
+let arr1 = arr.filter(function(el, i, _arr){ //vai retornar uma nova array com os valores filtrados
     return typeof el === 'number'
 })
 
-const arr2 = arr.forEach(function(el, i, _arr){
+const arr2 = arr.forEach(function(el, i, _arr){ //e tipo um loop
     console.log(el)
 })
 
-arr1 = arr1.map(function(el, i, _arr){
+arr1 = arr1.map(function(el, i, _arr){// transforma a array com o retorno do callbeck
     return el * el
 })
 
