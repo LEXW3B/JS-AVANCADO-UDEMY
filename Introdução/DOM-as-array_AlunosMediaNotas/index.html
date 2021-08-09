@@ -37,8 +37,7 @@
           </thead>
           <tbody>
 
-          </tbody>
-
+          </tbody>      
         </table>
       </div>
 
@@ -66,9 +65,18 @@
             aluno.media = avarege(aluno.n1, aluno.n2, aluno.n3, aluno.n4)
           })
 
-          const html = alunos.map(aluno => {
-            return " - oi  - "
-          })
+          const html = alunos.map(aluno => 
+            `<tr>
+              <td>${aluno.nome}</td>
+              <td>${aluno.n1}</td>
+              <td>${aluno.n2}</td>
+              <td>${aluno.n3}</td>
+              <td>${aluno.n4}</td>
+              <td>${aluno.media}</td>
+            </tr>`
+          ).join("")
+          document.querySelector('tbody').innerHTML = html
+
           console.log(html)
 
         })()
