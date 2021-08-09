@@ -141,13 +141,23 @@
 
         (function(){
 
-            const INDICES_NOTAS = {
-                n1: 1,
-                n2: 2,
-                n2: 3,
-                n2: 4,
-                media: 5
-            }
+          const trHeader = document.querySelector('thead tr')
+          const thsHeader = document.querySelectorAll('th')
+          const thsAlunoNota = thsHeader.querySelectorAll('[aluno-nota]')
+
+          function pegaIndice(indice){
+
+            const th = thsHeader.querySelector(`[aluno-nota="${indice}"]`)
+            console.log(th)
+
+            //const i = Array.prototype.indexOf.call(thsHeader, th)jeito antigo porem funciona em muitos browsers
+            //const i = Array.from(thsHeader).indexOf(th) jeito novo
+            const i = [...thsHeader].indexOf(th)//novo jeito resumido
+            return i
+          }
+
+
+            const INDICES_NOTAS = {}
 
             const trs = document.querySelectorAll('tbody tr')
 
