@@ -140,47 +140,42 @@
       <script>
 
         (function(){
-
           const trHeader = document.querySelector('thead tr')
           const thsHeader = document.querySelectorAll('th')
-          const thsAlunoNota = thsHeader.querySelectorAll('[aluno-nota]')
-          console.log(thsAlunoNota)
+          const thsAlunoNota = trHeader.querySelectorAll('[aluno-nota]')
+          const INDICES_NOTAS = {}
+
+          Array.from(thsAlunoNota).forEach(function(th){
+            let prop = th.getAttribute("aluno-nota")
+            INDICES_NOTAS[prop] = pegaIndice(prop)
+
+          })
 
           function pegaIndice(indice){
-
-            const th = thsHeader.querySelector(`[aluno-nota="${indice}"]`)
-            console.log(th)
-
-            //const i = Array.prototype.indexOf.call(thsHeader, th)jeito antigo porem funciona em muitos browsers
-            //const i = Array.from(thsHeader).indexOf(th) jeito novo
+            const th = trHeader.querySelector(`[aluno-nota="${indice}"]`)
             const i = [...thsHeader].indexOf(th)//novo jeito resumido
             return i
+
           }
+          console.log(INDICES_NOTAS)
 
+          const trs = document.querySelectorAll('tbody tr')
 
-            const INDICES_NOTAS = {}
+          let x = 0
+          let media = 0
 
-            const trs = document.querySelectorAll('tbody tr')
+          while(trs[x]){
+            const tds = trs[x].querySelectorAll('td')
 
-            let x = 0
-            let media = 0
-
-            while(trs[x]){
-                console.log(trs[x])
-
-                const tds = trs[x].querySelectorAll('td')
-                console.log(tds)
-
-                media = avarege(
-                    parseFloat(tds[INDICES_NOTAS.n1].textContent),
-                    parseFloat(tds[INDICES_NOTAS.n2].textContent),
-                    parseFloat(tds[INDICES_NOTAS.n3].textContent),
-                    parseFloat(tds[INDICES_NOTAS.n4].textContent)
-                )
-                x++
-
-                tds[INDICES_NOTAS.media].textContent = media
-            }
+            media = avarege(
+              parseFloat(tds[INDICES_NOTAS.n1].textContent),
+              parseFloat(tds[INDICES_NOTAS.n2].textContent),
+              parseFloat(tds[INDICES_NOTAS.n3].textContent),
+              parseFloat(tds[INDICES_NOTAS.n4].textContent)
+            )
+            x++
+            tds[INDICES_NOTAS.media].textContent = media
+          }
         })()
       </script>
     </body>
