@@ -28,6 +28,7 @@
                     <li>item 2.a</li>
                     <li>item 2.b</li>
                     <li>item 2.c</li>
+                    <li></li>
                 </ul>
             </li>
             <li>item <a href="#">link</a> </li>
@@ -64,6 +65,9 @@
             console.log(list.parentElement.children)//mostra uma coleção dos parentes
             console.log(list.parentElement.firstElementChild)//mostra uma coleção dos parentes do primeiro elemento
             console.log(list.parentElement.lastElementChild)//mostra uma coleção dos parentes do proximo elemento
+
+            console.log(list.lastElementChild.hasChildNodes())//para saber se tem algo dentro dessa li
+            console.log(list.lastElementChild.childNodes)//para saber o tipo de coisas que tem dentro da li
 
         </script>
     </body>
