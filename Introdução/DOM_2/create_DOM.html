@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Navegação pelo DOM</title>
+    <style>
+        body{
+            background-color: #777;
+            padding: 1.5em;
+        }
+    </style>
+</head>
+    <body>
+
+        <h1>teste DOM</h1>
+
+        <p>teste 1</p>
+        <p>lorem <a href="#"> link </a> .</p>
+        <p>teste 2</p>
+
+        <h2>List</h2>
+        <ul>
+            <li>item 1</li>
+            <li>item 2
+                <ul>
+                    <li>item 2.a</li>
+                    <li>item 2.b</li>
+                    <li>item 2.c</li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>item <a href="#">link</a> </li>
+        </ul>
+        <script>
+            const title = document.createElement('h1')//criar um elemento no html pelo js
+            const atributo = document.createAttribute('id')//cria um atributo id
+            atributo.value = 'titulo1'//aqui da um valor ao atributo
+            title.setAttributeNode(atributo)//linka o atributo a constante title
+
+            title.setAttribute('title', 'titulo inserido dinamicamente')//insere o texto n titulo
+            title.setAttribute('style', 'color: red;')//insere o texto n titulo
+
+            const text = document.createTextNode('CRIAR NÓS NO DOM')//cria um texto dentro no nó
+            title.appendChild(text)//insere o texto n titulo
+
+            title.textContent = 'texto inserido com textContent'//insere o texto no titulo
+
+            console.log(title)//visualizar
+
+            document.body.appendChild(title)//faz aparecer dentro do html
+        </script>
+    </body>
+</html>
