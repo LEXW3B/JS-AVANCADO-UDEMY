@@ -37,8 +37,34 @@
             console.log(document.body)
             console.log(document.body.parentElement)
             console.log(document.body.parentNode)
+            const html = document.body.parentElement
 
             console.log(document.body.parentElement === document.body.parentNode)
+
+            console.log(html.parentElement)
+            console.log(html.parentNode)
+
+            const h2 = document.querySelector('h2')
+            const h2nextSibling = h2.nextElementSibling
+            h2nextSibling.style.background ='yellow'
+
+            console.log(h2.previousElementSibling)
+
+            const link = document.querySelector('a')
+            const list = document.querySelector('ul ul')
+
+            console.log(link)
+
+            console.log(list.childNodes)//mostra uma coleção com 7 elementos
+            console.log(list.parentElement.childNodes)//mostra uma coleção dos parentes
+            console.log(list.parentElement.firstChild)//mostra uma coleção dos parentes do primeiro filho
+            console.log(list.parentElement.lastChild)//mostra uma coleção dos parentes do proximo filho
+
+            console.log(list.children)//mostra uma coleção com 3 elementos
+            console.log(list.parentElement.children)//mostra uma coleção dos parentes
+            console.log(list.parentElement.firstElementChild)//mostra uma coleção dos parentes do primeiro elemento
+            console.log(list.parentElement.lastElementChild)//mostra uma coleção dos parentes do proximo elemento
+
         </script>
     </body>
 </html>
