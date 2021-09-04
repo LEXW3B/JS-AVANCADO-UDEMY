@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 1em;
+        }
+        h1{
+            padding: 1em;
+        }
+        .container2{
+            background: #777;
+            padding: 15px;
+            width: 100%;
+            position: relative;
+        }
+        p{
+            border: 1px solid red;
+            background: #ccc;
+            padding: 10px;
+            margin: 15px;
+            position: relative;
+        }
+    </style>
+
+</head>
+    <body>
+        <h1>Teste DOM</h1>
+        
+        <!-- beforebegin -->
+        <div class="container2">
+        <!-- afterbegin -->
+        <p>paragrafo 1</p>
+        <p>paragrafo 2</p>
+        <p>paragrafo 3</p>
+        <!-- beforeend -->
+        </div>
+        <!-- afterend -->
+
+        <h1> Titulo 2 --------</h1>
+
+        <h2>Lista</h2>
+
+        <ul>
+            <li>item 1</li>
+            <li>item2
+                <ul>
+                    <li>item 2.a</li>
+                    <li>item 2.b</li>
+                    <li>item 2.c</li>
+                    <li>
+                        <!-- asdasd -->
+                    </li>
+                </ul>
+            </li>
+            <li>item <a href="#">link</a></li>
+        </ul>
+
+        <script>
+            //cria uma constante
+            const container2 = document.querySelector('.container2')
+
+            /*por parametro ode ser passado os seguintes comandos  
+              beforebegin - vai inserir antes da div
+              afterbegin - vai ser inserido depois da div e antes dos paragrafos
+              beforeend - vai ser introduzido depois dos paragafos
+              afterend - vai ficar depois da div
+            */
+
+            //se for usar tag usa insertAdjacentHTML
+            container2.insertAdjacentHTML("beforebegin", '<b> texto inserido 1</b>')//recebe 2 parametros primeiro e o metodo depois o que quizer
+            container2.insertAdjacentHTML("afterbegin", '<b> texto inserido 2</b>')//recebe 2 parametros primeiro e o metodo depois o que quizer
+            container2.insertAdjacentHTML("afterend", '<b> texto inserido 3</b>')//recebe 2 parametros primeiro e o metodo depois o que quizer
+            container2.insertAdjacentHTML("beforeend", '<b> texto inserido 4</b>')//recebe 2 parametros primeiro e o metodo depois o que quizer
+
+            //se não for usar tag usa insertAdjacentText
+            container2.insertAdjacentText('afterbegin', '<b> texto inserido 5</b>')//com o metodo insertAdjacentText o segundo parametro todo e uma estring não tem tag
+
+
+
+
+            //cria uma constante
+            const em = document.createElement('em')
+            em.textContent = '  texto com enfase'
+            container2.insertAdjacentElement('beforeend', em)
+
+
+
+
+            //cria uma constante
+            const list = document.querySelector('ul')
+
+            //list.remove()e o jeito mais facil. Pode ser que não funcione no IE11.
+            //parentNode.removeChild(list)não funcionou no IE11
+            list.parentElement.removeChild(list)//esse funciona no IE11
+
+
+
+            //cria uma constante
+            const parent = document.body
+            const newChild = container2.querySelector('h1').cloneNode(true)//é o novo elemento que será inserido no lugar do oldChild. Se já existir no DOM, será removido primeiro para depois ser inserido.
+            const oldChild = document.querySelector('h1')//oldChild é o elemento existente que será substituído.
+            parent.replaceChild(newChild, oldChild)
+
+        </script>
+    </body>
+</html>
