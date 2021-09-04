@@ -50,7 +50,26 @@
 
             console.log(title)//visualizar
 
-            document.body.appendChild(title)//faz aparecer dentro do html
+            //document.querySelector('.container').appendChild(title)//faz aparecer dentro do html
+            //document.querySelector('.container').append(title)
+            //document.querySelector('.container').prepend('texto novo')
+
+            const title2 = document.createElement('h1')
+            title2.textContent = 'title 2----------'
+
+            const list = document.querySelector('ul')
+            const container = document.querySelector('.container')
+
+            container.insertBefore(title2, list)
+            container.insertBefore(title2, container.firstChild)
+
+            let sublevel = document.querySelector('ul ul')
+            sublevel = sublevel.cloneNode(true)
+
+            const h2 = document.querySelector('h2')
+
+            container.insertBefore(sublevel, h2.nextElementSibling)
+
         </script>
     </body>
 </html>
