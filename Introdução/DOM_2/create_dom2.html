@@ -102,10 +102,10 @@
 
 
             //cria uma constante
-            const parent = document.body
-            const newChild = container2.querySelector('h1').cloneNode(true)//é o novo elemento que será inserido no lugar do oldChild. Se já existir no DOM, será removido primeiro para depois ser inserido.
+            const parents = document.body
+            const newChild = container2.querySelector('h1')//é o novo elemento que será inserido no lugar do oldChild. Se já existir no DOM, será removido primeiro para depois ser inserido.
             const oldChild = document.querySelector('h1')//oldChild é o elemento existente que será substituído.
-            parent.replaceChild(newChild, oldChild)
+            parents.replaceChild(newChild, oldChild)
 
         </script>
     </body>
