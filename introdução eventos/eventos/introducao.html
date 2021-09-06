@@ -23,6 +23,12 @@
             <button id="btn2" >botao 2</button>
             <button id="btn3" >botao 3</button>
         </div>
+        <hr>
+        <div class="container2">
+            <button>botao 1</button>
+            <button>botao 2</button>
+            <button>botao 3</button>
+        </div>
 
 
         <script>
@@ -49,7 +55,9 @@
                 console.log('função anonime no btn2')
             }
 
-            btn3.addEventListener('click', function(){
+            btn3.addEventListener('click', function(event){
+                console.log(event)
+                event.stopPropagation()
                 console.log('clicou no btn3')
             })
             document.addEventListener('click', function(){
@@ -62,7 +70,23 @@
             }, true)
 
             //DOM NIVEL 2 (ATUAL)
-            
+
+            const container2 = document.querySelector('.container2')
+            const btns = document.querySelectorAll('.container2 button')
+            console.log(btns);
+            /*[...btns].forEach(btn => {
+                btn.addEventListener('click', function(e){
+                    e.stopPropagation()
+                    console.log(e.target)
+                })
+            })*/
+            container2.addEventListener('click', function(e){
+                e.stopPropagation()
+
+                if(e.target.nodeName === 'BUTTON'){
+                    console.log(e.target)
+                }
+            })
         </script>
         
     </body>
