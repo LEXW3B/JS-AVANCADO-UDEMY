@@ -28,7 +28,7 @@
             const btn2 = document.getElementById('btn2')
             const btn3 = document.getElementById('btn3')
 
-            /* DOM NIVEL ZERO NÃO É MAIS UTILIZADO
+            /* DOM NIVEL ZERO NÃO É MAIS UTILIZADO*/
             function clicou(){
                 console.log('click função clicou')
             }
@@ -36,7 +36,16 @@
             btn1.onclick = function(){
                 console.log('click btn1 função anonima')
             }
-            btn1.onclick = clicou */
+            btn1.onclick = clicou 
+            btn2.addEventListener('click', clicou)
+            btn2.addEventListener('click', function(){
+                console.log('click função anonima')
+            })
+
+
+            btn2.onclick = function(){
+                console.log('função anonime no btn2')
+            }
 
             //DOM NIVEL 2 (ATUAL)
             
