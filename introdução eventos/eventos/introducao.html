@@ -60,8 +60,11 @@
                 event.stopPropagation()
                 console.log('clicou no btn3')
             })
-            document.addEventListener('click', function(){
+            document.addEventListener('click', function(e){
                 console.log('clicou no document')
+                console.log(e.target)
+                console.log(e.currentTarget)
+                console.log(this)
             })
 
             const container = document.getElementById('container')
@@ -81,10 +84,13 @@
                 })
             })*/
             container2.addEventListener('click', function(e){
-                e.stopPropagation()
-
+                //e.stopPropagation()
+                console.log('clicou no container2')
+                console.log(e.target)
+                console.log(e.currentTarget)
+                console.log(this)
                 if(e.target.nodeName === 'BUTTON'){
-                    console.log(e.target)
+                    //console.log(e.target)
                 }
             })
         </script>
