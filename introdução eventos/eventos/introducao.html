@@ -18,9 +18,11 @@
     <body>
         <h1>Eventos</h1> 
 
-        <button id='btn1' >botao 1</button>
-        <button id="btn2" >botao 2</button>
-        <button id="btn3" >botao 3</button>
+        <div id="container">
+            <button id='btn1' >botao 1</button>
+            <button id="btn2" >botao 2</button>
+            <button id="btn3" >botao 3</button>
+        </div>
 
 
         <script>
@@ -46,6 +48,18 @@
             btn2.onclick = function(){
                 console.log('função anonime no btn2')
             }
+
+            btn3.addEventListener('click', function(){
+                console.log('clicou no btn3')
+            })
+            document.addEventListener('click', function(){
+                console.log('clicou no document')
+            })
+
+            const container = document.getElementById('container')
+            container.addEventListener('click', function(){
+                console.log('clicou no container')
+            }, true)
 
             //DOM NIVEL 2 (ATUAL)
             
