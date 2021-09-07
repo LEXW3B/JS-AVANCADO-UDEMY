@@ -50,18 +50,29 @@
         feedbackMessage.classList.add('show')
         feedbackMessage.getElementsByTagName('p')[0].textContent = msg
 
+        feedbackMessageCloseBtn.focus()
+
         function hideErrorMessage(){
             console.log('clicando close')
             feedbackMessage.classList.remove('show')
 
             feedbackMessageCloseBtn.removeEventListener('click', hideErrorMessage)
+            feedbackMessageCloseBtn.removeEventListener('keyup', pressedKeyboardOnBtn)
 
             if(typeof cb === 'function'){
                 cb()
             }
         }
+        function pressedKeyboardOnBtn(e){            
+            if(e.keyCode === 27){
+                hideErrorMessage()
+            }
+        }
 
         feedbackMessageCloseBtn.addEventListener('click', hideErrorMessage)
+
+        feedbackMessageCloseBtn.addEventListener('keyup', pressedKeyboardOnBtn)
+
 
     }
 
