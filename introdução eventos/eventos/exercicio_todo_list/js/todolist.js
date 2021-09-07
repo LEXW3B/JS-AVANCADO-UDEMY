@@ -8,6 +8,17 @@
     const ul = document.getElementById('todo-list')
     const lis = document.getElementsByTagName('li')
 
+    function addEventLi(li){
+        li.addEventListener('click', function(){
+            console.log(this)
+            console.log(this.textContent)
+            console.log(this.innerText)
+            console.log(this.innerHTML)
+            console.log(this.outerHTML)
+        })
+
+    }
+
     function addTask(task){
         const li = document.createElement('li')
         li.className = 'todo-item'
@@ -17,13 +28,8 @@
         li.appendChild(p)
         ul.appendChild(li)
 
-        li.addEventListener('click', function(){
-            console.log(this)
-            console.log(this.textContent)
-            console.log(this.innerText)
-            console.log(this.innerHTML)
-            console.log(this.outerHTML)
-        })
+        addEventLi(li)
+
     }
 
     todoAddForm.addEventListener('submit', function(e){
@@ -39,10 +45,9 @@
         itemInput.value = ''
         itemInput.focus()
     });
-    [...lis].forEach(element => {
-        element.addEventListener('click', function(e){
-            console.log(this)
-        })
+    [...lis].forEach(li => {
+        addEventLi(li)
+        
     });
 
 })()
