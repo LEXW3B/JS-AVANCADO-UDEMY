@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body{
+            background: #777;
+            padding: 1em;
+        }
+    </style>
+</head>
+    <body>
+        <h1>Events</h1>
+
+        <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+        
+
+        <script>
+            const msg = document.getElementById('msg')
+
+            msg.addEventListener('keypress', keypress)
+            msg.addEventListener('keyup', keyup)
+            msg.addEventListener('keydown', keydown)
+
+            function keypress(e){//so dispara em teclas alfanuméricas(1, 2, 3 ...)
+                console.log('keypress')
+                console.log(this.value)
+            }
+            function keyup(e){//da o valor atualizado do input
+                console.log('keyup')
+                console.log(this.value)
+            }
+            function keydown(e){//e disparado em teclas unicas (alt, esc, ctrl...)
+                console.log('keydown')
+                console.log(this.value)
+            }
+
+        </script>
+    </body>
+</html>
