@@ -6,29 +6,51 @@
     const itemInput = document.getElementById('item-input')
     const todoAddForm = document.getElementById('todo-add')
     const ul = document.getElementById('todo-list')
-    const lis = document.getElementsByTagName('li')
+    //const lis = document.getElementsByTagName('li')
+
+    //LISTA DE DADOS OU ESTRUTURA DE DADOS
+    let arrTasks = [
+        {
+            name: 'task 1',
+            createAt: Date.now(),
+            completed: false
+        }
+    ]
 
     function addEventLi(li){
         li.addEventListener('click', function(){
             console.log(this)
-            console.log(this.textContent)
-            console.log(this.innerText)
-            console.log(this.innerHTML)
-            console.log(this.outerHTML)
         })
 
     }
 
-    function addTask(task){
+    function generateLiTask(obj){
         const li = document.createElement('li')
         li.className = 'todo-item'
         const p = document.createElement('p')
         p.className = 'task-name'
-        p.textContent = task
+        p.textContent = obj.name
         li.appendChild(p)
         ul.appendChild(li)
 
         addEventLi(li)
+
+        return li
+    }
+
+    function renderTasks(){
+        ul.innerHTML = ''
+        arrTasks.forEach(taskObj => {
+            ul.appendChild(generateLiTask(taskObj))
+        });
+    }
+
+    function addTask(task){
+        arrTasks.push({
+            name: task,
+            createAt: Date.now(),
+            completed: false
+        })
 
     }
 
@@ -42,12 +64,10 @@
         // `
         //limpar o input e manter o focus
         addTask(itemInput.value)
+        renderTasks()
         itemInput.value = ''
         itemInput.focus()
     });
-    [...lis].forEach(li => {
-        addEventLi(li)
-        
-    });
+    renderTasks()
 
 })()
