@@ -22,12 +22,12 @@
         }
     ]
 
-    function addEventLi(li){
-        li.addEventListener('click', function(){
-            console.log(this)
-        })
+    // function addEventLi(li){
+    //     li.addEventListener('click', function(){
+    //         console.log(this)
+    //     })
 
-    }
+    // }
 
     function generateLiTask(obj){
         const li = document.createElement('li')
@@ -40,6 +40,7 @@
 
         checkButton.className = 'button-check'
         checkButton.innerHTML = '<i class="fas fa-check displayNone"></i>'
+        checkButton.setAttribute('data-action', 'checkButton')
 
         li.appendChild(checkButton)
 
@@ -48,6 +49,7 @@
         li.appendChild(p)
 
         editButton.className = 'fas fa-edit'
+        editButton.setAttribute('data-action', 'editButton')
         li.appendChild(editButton)
 
         const containerEdit = document.createElement('div')
@@ -60,19 +62,22 @@
         const containerEditButton = document.createElement('button')
         containerEditButton.className = 'editButton'
         containerEditButton.textContent = 'Edit'
+        containerEditButton.setAttribute('data-action', 'containerEditButton')
         containerEdit.appendChild(containerEditButton)
         const containerCancelButton = document.createElement('button')
         containerCancelButton.className = 'cancelButton'
         containerCancelButton.textContent = 'cancel'
+        containerCancelButton.setAttribute('data-action', 'containerCancelButton')
         containerEdit.appendChild(containerCancelButton)
 
         li.appendChild(containerEdit)
 
         deleteButton.className = 'fas fa-trash-alt'
+        deleteButton.setAttribute('data-action', 'deleteButton')
         li.appendChild(deleteButton)
         
 
-        addEventLi(li)
+        // addEventLi(li)
 
         return li
     }
@@ -93,6 +98,11 @@
 
     }
 
+    function clickedUl(e){
+        console.log(e.target)
+        console.log(e.target.getAttribute('data-action'))
+    }
+
     todoAddForm.addEventListener('submit', function(e){
         e.preventDefault()
         console.log(itemInput.value)
@@ -107,6 +117,10 @@
         itemInput.value = ''
         itemInput.focus()
     });
+
+    ul.addEventListener('click', clickedUl)
+
+
     renderTasks()
 
 })()
