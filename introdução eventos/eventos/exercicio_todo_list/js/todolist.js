@@ -102,8 +102,14 @@
         console.log(e.target)
         console.log(e.target.getAttribute('data-action'))
 
-        if(e.target.getAttribute('data-action') === 'editButton'){
-            console.log('é edit')
+        const actions = {
+            editButton: function(){
+                console.log('editButton no objeto')
+            }
+        }
+        const dataAction = e.target.getAttribute('data-action')
+        if(action[dataAction]){
+            action[dataAction]()
         }
     }
     
