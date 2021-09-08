@@ -101,7 +101,12 @@
     function clickedUl(e){
         console.log(e.target)
         console.log(e.target.getAttribute('data-action'))
+
+        if(e.target.getAttribute('data-action') === 'editButton'){
+            console.log('é edit')
+        }
     }
+    
 
     todoAddForm.addEventListener('submit', function(e){
         e.preventDefault()
