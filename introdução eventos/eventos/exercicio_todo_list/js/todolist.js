@@ -6,7 +6,7 @@
     const itemInput = document.getElementById('item-input')
     const todoAddForm = document.getElementById('todo-add')
     const ul = document.getElementById('todo-list')
-    //const lis = document.getElementsByTagName('li')
+    const lis = document.getElementsByTagName('li')
 
     //LISTA DE DADOS OU ESTRUTURA DE DADOS
     let arrTasks = [
@@ -99,17 +99,29 @@
     }
 
     function clickedUl(e){
+        const dataAction = e.target.getAttribute('data-action')
         console.log(e.target)
-        console.log(e.target.getAttribute('data-action'))
+        console.log(lis)
+
+        if(!dataAction) return
+
+        let currentLi = e.target
+        while(currentLi.nodeName !== 'LI'){
+            currentLi = currentLi.parentElement
+        }
+        console.log(currentLi)
+
+        const currentLiIndex = [...lis].indexOf(currentLi)
+        console.log(currentLiIndex)
 
         const actions = {
             editButton: function(){
                 console.log('editButton no objeto')
             }
         }
-        const dataAction = e.target.getAttribute('data-action')
-        if(action[dataAction]){
-            action[dataAction]()
+        
+        if(actions[dataAction]){
+            actions[dataAction]()
         }
     }
     
