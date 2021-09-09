@@ -100,23 +100,22 @@
 
     function clickedUl(e){
         const dataAction = e.target.getAttribute('data-action')
-        console.log(e.target)
-        console.log(lis)
-
         if(!dataAction) return
 
         let currentLi = e.target
         while(currentLi.nodeName !== 'LI'){
             currentLi = currentLi.parentElement
         }
-        console.log(currentLi)
-
         const currentLiIndex = [...lis].indexOf(currentLi)
-        console.log(currentLiIndex)
 
         const actions = {
             editButton: function(){
                 console.log('editButton no objeto')
+            },
+            deleteButton: function(){
+                arrTasks.splice(currentLiIndex, 1)
+                console.log(arrTasks)
+                renderTasks()
             }
         }
         
