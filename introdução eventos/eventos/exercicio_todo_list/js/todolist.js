@@ -7,6 +7,7 @@
     const todoAddForm = document.getElementById('todo-add')
     const ul = document.getElementById('todo-list')
     const lis = document.getElementsByTagName('li')
+    
 
     //LISTA DE DADOS OU ESTRUTURA DE DADOS
     let arrTasks = [
@@ -89,25 +90,26 @@
         });
     }
 
+    
     function addTask(task){
         arrTasks.push({
             name: task,
             createAt: Date.now(),
             completed: false
         })
-
+        
     }
-
+    
     function clickedUl(e){
         const dataAction = e.target.getAttribute('data-action')
         if(!dataAction) return
-
+        
         let currentLi = e.target
         while(currentLi.nodeName !== 'LI'){
             currentLi = currentLi.parentElement
         }
         const currentLiIndex = [...lis].indexOf(currentLi)
-
+        
         const actions = {
             editButton: function(){
                 console.log('editButton no objeto')
@@ -124,7 +126,7 @@
         }
     }
     
-
+    
     todoAddForm.addEventListener('submit', function(e){
         e.preventDefault()
         console.log(itemInput.value)
@@ -139,10 +141,11 @@
         itemInput.value = ''
         itemInput.focus()
     });
-
+    
     ul.addEventListener('click', clickedUl)
-
-
+    
+    
     renderTasks()
-
+    
+    
 })()
