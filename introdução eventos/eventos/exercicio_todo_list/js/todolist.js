@@ -40,7 +40,7 @@
         li.className = 'todo-item'
 
         checkButton.className = 'button-check'
-        checkButton.innerHTML = '<i class="fas fa-check displayNone"></i>'
+        checkButton.innerHTML = '<i class="fas fa-check displayNone" data-action="checkButton" ></i>'
         checkButton.setAttribute('data-action', 'checkButton')
 
         li.appendChild(checkButton)
@@ -136,6 +136,15 @@
                 currentLi.querySelector('.editContainer').removeAttribute('style')
 
                 currentLi.querySelector('.editInput').value = arrTasks[currentLiIndex].name
+            },
+            checkButton: function(){
+                arrTasks[currentLiIndex].completed = !arrTasks[currentLiIndex].completed
+
+                if (arrTasks[currentLiIndex].completed){
+                    currentLi.querySelector('.fa-check').classList.remove('displayNone')
+                }else {
+                    currentLi.querySelector('.fa-check').classList.add('displayNone')
+                }
             }
         }
         
