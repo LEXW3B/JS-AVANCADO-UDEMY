@@ -10,7 +10,19 @@
     
 
     //LISTA DE DADOS OU ESTRUTURA DE DADOS
-    let arrTasks = [
+    let arrTasks = getSavedData()
+
+    // function addEventLi(li){
+    //     li.addEventListener('click', function(){
+    //         console.log(this)
+    //     })
+
+    // }
+    function getSavedData(){
+       let tasksData = localStorage.getItem('tasks')
+       tasksData = JSON.parse(tasksData)
+       
+       return [
         {
             name: 'task 1',
             createAt: Date.now(),
@@ -22,13 +34,11 @@
             completed: false
         }
     ]
-
-    // function addEventLi(li){
-    //     li.addEventListener('click', function(){
-    //         console.log(this)
-    //     })
-
-    // }
+    }
+    function setNewData(){
+        localStorage.setItem('tasks', JSON.stringify(arrTasks))
+    }
+    setNewData()
 
     function generateLiTask(obj){
         const li = document.createElement('li')
