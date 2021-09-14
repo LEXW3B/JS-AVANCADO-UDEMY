@@ -22,7 +22,7 @@
        let tasksData = localStorage.getItem('tasks')
        tasksData = JSON.parse(tasksData)
        
-       return [
+       return tasksData && tasksData.length ? tasksData : [
         {
             name: 'task 1',
             createAt: Date.now(),
@@ -108,7 +108,7 @@
             createAt: Date.now(),
             completed: false
         })
-        
+        setNewData()
     }
     
     function clickedUl(e){
@@ -136,11 +136,13 @@
                 arrTasks.splice(currentLiIndex, 1)
                 console.log(arrTasks)
                 renderTasks()
+                setNewData()
             },
             containerEditButton: function(){
                 const val = currentLi.querySelector('.editInput').value
                 arrTasks[currentLiIndex].name = val
                 renderTasks()
+                setNewData()
             },
             containerCancelButton: function(){
                 currentLi.querySelector('.editContainer').removeAttribute('style')
@@ -155,6 +157,7 @@
                 }else {
                     currentLi.querySelector('.fa-check').classList.add('displayNone')
                 }
+                setNewData()
             }
         }
         
