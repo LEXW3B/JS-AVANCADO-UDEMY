@@ -3,7 +3,7 @@ function changeName(name){  //poderia ser tambem com uma aerofunction ?
     this.updatedAt = new Date()
 }
 
-// const changeName = name => {//com aerofunction não iria servir porque vira windows
+// const changeName = name => {//com aerofunction não iria servir, porque vira windows
 //     console.log(name)
 //     console.log(this)
 // }
