@@ -21,7 +21,9 @@ console.log(str1.indexOf('string'))
 //lastIndexOf(), vai retornar a posição da ultima ocorrencia da string que passei por parametro 
 console.log(str1.lastIndexOf('i'))
 
-
+//slice() e substring()fazem a mesma coisa, corta por dois parametros inicio e fim uma string
+console.log(str1.slice(2, 5))//esse aceita valore negativos por que ele vai começar no fim
+console.log(str1.substring(2, 5))//esse não aceita valores negativos
 
 
 
