@@ -33,7 +33,13 @@ console.log('/*/*/*/*/*/*/*/*/*/*/')
 // toLowerCase(), transforma as letras em minusculas
 console.log(str1.toLowerCase())
 console.log(str1)
+console.log('-=-==-=-=-=-=-=-=-=-=-')
 
+// valueOf(), converte para um tipo primitivo
+let strAsObj = new String('minha string como objeto')
+console.log(strAsObj)
+console.log(strAsObj.valueOf())
+console.log('-=-=-=-=-=-=-=-=-=--=-=--=-=')
 
 
 
