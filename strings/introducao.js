@@ -11,7 +11,7 @@ charAt(),                     charCodeAt(),                       e length*  */
 
 
 // replace(),substitui um string por outra string
-let str1 = 'minha string bacanuda'
+let str1 = 'Minha String Bacanuda'
 console.log(str1.replace('i', 'o'))
 console.log(str1)
 
@@ -25,9 +25,14 @@ console.log(str1.lastIndexOf('i'))
 console.log(str1.slice(2, 5))//esse aceita valore negativos por que ele vai começar no fim
 console.log(str1.substring(2, 5))//esse não aceita valores negativos
 
+//toUpperCase(), transforma as letras em maiusculas
+console.log(str1.toUpperCase())
+console.log(str1)
+console.log('/*/*/*/*/*/*/*/*/*/*/')
 
-
-
+// toLowerCase(), transforma as letras em minusculas
+console.log(str1.toLowerCase())
+console.log(str1)
 
 
 
