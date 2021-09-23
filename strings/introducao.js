@@ -50,5 +50,22 @@ console.log(str1.trimStart())
 console.log(str1)
 console.log('-=-==-==-=-=-=-=-=-=-===-=-=-')
 
+//padStart(),*padEnd(),* coloca espaços no começo ou final passado por parametro a quatidade
+str1 = '0123456789'
+console.log(str1.padStart(20, '*'))//vai ser 20 espaços antes da string
+console.log(str1.padEnd(20,'*'))
+console.log(str1.padEnd(20,'*').length)
+console.log(str1)
+console.log('-=-=-=-=-===-==-=-=-=-=-=-=-=-=-=-')
+
+//desafio
+let telefone = '9187-2345'
+function mascararTelefone(numero){
+    return '9***-**45'
+}
+
+
+
+
 
 
