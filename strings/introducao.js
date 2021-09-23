@@ -72,6 +72,10 @@ console.log(mascararTelefone(telefone1))
 console.log(mascararTelefone(telefone2))
 console.log('-====-=-=-=-=-==-=-==--=-=-=')
 
-
+// startsWith(),*endsWith(),*=-=serve para retornar um booleano
+let str2 = 'Hoje é Sábado'
+console.log(str2.startsWith('Hoje'))
+console.log(str2.endsWith('Hoje'))
+console.log('-==-=-=-=-=-=-=-=-=-=-=-=-=')
 
 
