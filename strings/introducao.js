@@ -78,4 +78,11 @@ console.log(str2.startsWith('Hoje'))
 console.log(str2.endsWith('Hoje'))
 console.log('-==-=-=-=-=-=-=-=-=-=-=-=-=')
 
+// charAt()-=-recupera o que esta na posição posta por parametro,
+// charCodeAt()-=-recupera o codigo unicode,
+// length*-=-recupera o tamanho da string
+let str3 = 'abcdefgh'
+console.log(str3.charAt(1))
+console.log(str3.charCodeAt(0))
+console.log(str3.length)
 
