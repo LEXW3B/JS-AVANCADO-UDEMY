@@ -1,4 +1,4 @@
-/*       se tiver um * e porque não funciona em todos os browsers
+/*se tiver um * e porque não funciona em todos os browsers olhar no site - CAN I USE
 replace(),                    replaceAll(),**=-SEM SUPORTE-=**      
 indexOf(),                    lastIndexOf(),                      includes(),*
 slice(),                      substring(),                        split(),
@@ -41,8 +41,14 @@ console.log(strAsObj)
 console.log(strAsObj.valueOf())
 console.log('-=-=-=-=-=-=-=-=-=--=-=--=-=')
 
-
-
+//trim(), vai remover os espaços em branco do inicio e do final da sting
+str1 = '     '+ str1 +'     '
+console.log(str1)
+console.log(str1.trim())
+console.log(str1.trimEnd())
+console.log(str1.trimStart())
+console.log(str1)
+console.log('-=-==-==-=-=-=-=-=-=-===-=-=-')
 
 
 
