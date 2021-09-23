@@ -59,12 +59,18 @@ console.log(str1)
 console.log('-=-=-=-=-===-==-=-=-=-=-=-=-=-=-=-')
 
 //desafio
-let telefone = '9187-2345'
+let telefone1 = '99187-2345'  //'9****-**45'
+let telefone2 = '1234-5678'   //'1***-**78'
 function mascararTelefone(numero){
-    return '9***-**45'
+    let hifemPosicao = numero.indexOf('-')
+    let numeroInicio = numero.slice(0, hifemPosicao)
+    let numeroFinal = numero.slice(hifemPosicao + 1)
+    let doisUltimosNumeros = numeroFinal.slice(-2)
+    return `${numeroInicio[0].padEnd(numeroInicio.length, '*')}-${doisUltimosNumeros.padStart(numeroFinal.length, '*')}`
 }
-
-
+console.log(mascararTelefone(telefone1))
+console.log(mascararTelefone(telefone2))
+console.log('-====-=-=-=-=-==-=-==--=-=-=')
 
 
 
