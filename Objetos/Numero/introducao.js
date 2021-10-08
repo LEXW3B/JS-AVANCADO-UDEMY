@@ -32,7 +32,7 @@ numero = 123456.789
 
 console.log(numero.toLocaleString())//coloca o numero com compreensão humana universal
 console.log(numero.toLocaleString('PT-br'))//coloca o numero com o formato do brasil
-console.log(numero.toLocaleString('PT-br', {style: 'currency', currency: 'BRL'}))//faz a correção para a moeda do país em questão 
+console.log(numero.toLocaleString('PT-br', {style: 'currency', currency: 'BRL'}))//faz a correção para a moeda do país em questão  
 console.log(numero.toLocaleString('EN-us', {style: 'currency', currency: 'USD'}))
 console.log(numero.toLocaleString('PT-pt', {style: 'currency', currency: 'EUR'}))
 
