@@ -36,3 +36,8 @@ console.log(numero.toLocaleString('PT-br', {style: 'currency', currency: 'BRL'})
 console.log(numero.toLocaleString('EN-us', {style: 'currency', currency: 'USD'}))
 console.log(numero.toLocaleString('PT-pt', {style: 'currency', currency: 'EUR'}))
 
+console.log(Number.MAX_VALUE, Number.MIN_VALUE)
+
+let numeroAsString = '3.156'
+console.log(isNaN(numeroAsString))
+console.log(numeroAsString, typeof numeroAsString, parseFloat(numeroAsString))
