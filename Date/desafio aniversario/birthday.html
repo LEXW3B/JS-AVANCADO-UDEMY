@@ -79,11 +79,12 @@
                 console.log(arr.length)
                 if(arr.length > 2){
 
-                    container.innerHTML = `
-                    <P>Falta(m) ${quantoFaltaPara(arr[1], arr[2])} dias para seu aniversário
-                    `
+                    container.innerHTML = 
+                        `
+                        <P>Falta(m) ${quantoFaltaPara(arr[1], arr[2])} dias para seu aniversário</p>
+                        `
                 }else{
-                    container.textContent = ' '
+                    container.textContent = " "
                 }
 
             }
