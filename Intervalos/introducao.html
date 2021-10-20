@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+
+        <div></div>
+
+
+        <script>
+
+            const tempoInicio = Date.now()
+            let n = 0
+
+            setTimeout(function(){//cria uma função para acontecer uma unica vez depois de 2 seg.
+                console.log('timeout depois de 2000ms')
+                const tempoFinal = Date.now()
+                console.log(tempoFinal - tempoInicio)
+            }, 2000)
+
+            let str = ''
+            var d = document.querySelector('div')
+            for(let i = 0; i < 1000; i++){
+                str += ` i: ${i} -- `
+                d.textContent += str
+            }
+
+            const intervalo = setInterval(function(){//acontece toda vez depois de 1 segundo
+                console.log('intervalo de n: ', n++)
+                if(n > 5){
+                    clearInterval(intervalo)
+                    console.log('fim do programa')
+                }
+            }, 1000)
+        </script>
+        
+    </body>
+</html>
