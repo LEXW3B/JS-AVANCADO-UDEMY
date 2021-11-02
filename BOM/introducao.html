@@ -13,6 +13,8 @@
 
         <button>Abre com metodo open</button>
 
+        <img src="https://programadoresbrasil.com.br/wp-content/uploads/2021/06/javascript-1200x900.jpg" alt="javascript">
+
         <hr>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis iusto, nisi repellendus accusamus vitae eaque tempora facere error aperiam! Impedit rerum fugit cum quibusdam exercitationem reiciendis, aperiam voluptas delectus aspernatur!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis iusto, nisi repellendus accusamus vitae eaque tempora facere error aperiam! Impedit rerum fugit cum quibusdam exercitationem reiciendis, aperiam voluptas delectus aspernatur!</p>
@@ -35,7 +37,20 @@
             console.log(opener)
 
             document.querySelector('button').addEventListener('click', function(){
-                window.open('history.html')
+                window.open('history.html', 'nome-janela', 'width=600,height=300')
+            })
+
+            window.addEventListener('load', function(){
+                console.log('load')
+            })
+            window.addEventListener('DOMContentLoaded', function(){
+                console.log('DOMContentLoaded')
+            })
+            window.addEventListener('resize', function(){
+                console.log('resize', innerWidth, innerHeight)
+            })
+            window.addEventListener('scroll', function(){
+                console.log('scroll', pageYOffset)
             })
 
         </script>
