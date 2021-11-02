@@ -52,6 +52,12 @@
             window.addEventListener('scroll', function(){
                 console.log('scroll', pageYOffset)
             })
+            window.addEventListener('unload', function(){
+                console.log('unload')
+            })
+            window.addEventListener('beforeunload', function(){
+                console.log('beforeunload')
+            })
 
         </script>
         
